@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src * 'self' 'unsafe-inline'; media-src * data:; img-src * 'unsafe-inline' data:" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+
+        <title>PhoneGap AR Demo</title>
+
+
+    </head>
+    <body>
+
+       <!-- Start of second page -->
+       <div data-role="page" id="photos-page">
+           <div data-role="header" data-position="fixed">
+               <div data-role="controlgroup" data-type="horizontal" class="ui-btn-left">
+                   <a data-icon="bars" data-iconpos="notext" data-role="button" href="#navigation">Menu</a>
+               </div>
+               <h1>Photos</h1>
+
+
+           </div>
+           <!-- /header -->
+
+           <!-- Navigation panel -->
+           <div data-role="panel" id="navigation" data-display="overlay">
+               <h3>Navigation</h3>
+               <ul data-role="listview">
+                   <li><a href="#photos-page" data-transition="pop">Photos page</a></li>
+                   <li><a href="#naruto-page" data-transition="pop">Naruto page</a></li>
+                   <li><a href="#" id="launchAR" data-transition="slideup">Wikitude</a></li>
+
+               </ul>
+           </div>
+           <!-- /panel -->
+
+           <!-- fox panel -->
+           <div data-role="popup" id="fox">
+               <img src="img/fox.jpg" />
+           </div>
+           <!-- /panel -->
+
+           <!-- hedgehog panel -->
+           <div data-role="popup" id="hedgehog">
+               <img src="img/hedgehog.jpg" />
+           </div>
+           <!-- /panel -->
+
+           <!-- cat panel -->
+           <div data-role="popup" id="cat">
+               <img src="img/cat.jpg" />
+           </div>
+           <!-- /panel -->
+           <!-- squirrel panel -->
+           <div data-role="popup" id="squirrel">
+               <img src="img/squirrel.jpg" />
+           </div>
+           <!-- /panel -->
+           <!-- chimpanzees panel -->
+           <div data-role="popup" id="chimpanzees">
+               <img src="img/chimpanzees.jpg" />
+           </div>
+           <!-- /panel -->
+
+           <div role="main" class="ui-content">
+
+               <ul data-role="listview" >
+                       <li><a data-rel="popup" href="#fox" > <img height="80" src="img/fox.jpg" />Fox</a></li>
+                       <li><a data-rel="popup" href="#hedgehog"><img height="80" src="img/hedgehog.jpg" />Hedgehog</a></li>
+                       <li><a data-rel="popup" href="#cat"><img height="80" src="img/cat.jpg" />Cat</a></li>
+                       <li><a data-rel="popup" href="#squirrel"><img height="80" src="img/squirrel.jpg" />Squirrel</a></li>
+                       <li><a data-rel="popup" href="#chimpanzees"><img height="80" src="img/chimpanzees.jpg" />Chimpanzees</a></li>
+               </ul>
+
+           </div>
+           <!-- /content -->
+
+           <div data-role="footer" data-position="fixed">
+               <div data-role="navbar">
+                   <ul>
+                       <li>
+                           <a data-icon="arrow-d-l" href="#first-page">Page 1</a>
+                       </li>
+                       <li>
+                           <a data-icon="arrow-d" href="#second-page">Page 2</a>
+                       </li>
+                       <li>
+                           <a data-icon="arrow-d-l" href="#third-page">Page 3</a>
+                       </li>
+                       </ui>
+                   </ul>
+               </div>
+               <h4>SuperDuper App</h4>
+           </div>
+           <!-- /footer -->
+
+       </div>
+       <!-- /page -->
+
+       <!-- Start of second page -->
+       <div data-role="page" id="naruto-page">
+           <div data-role="header" data-position="fixed">
+               <div data-role="controlgroup" data-type="horizontal" class="ui-btn-left">
+                   <a data-icon="bars" data-iconpos="notext" data-role="button" href="#navigation-naruto">Menu</a>
+               </div>
+               <h1>Photos</h1>
+
+
+           </div>
+           <!-- /header -->
+
+           <!-- Navigation panel -->
+           <div data-role="panel" id="navigation-naruto" data-display="overlay">
+               <h3>Navigation</h3>
+               <ul data-role="listview">
+                   <li><a href="#photos-page" data-transition="pop">Photos page</a></li>
+                   <li><a href="#naruto-page" data-transition="pop">Naruto page</a></li>
+                   <li><a href="#launchAR" data-transition="slideup">Wikitude</a></li>
+
+               </ul>
+           </div>
+           <!-- /panel -->
+
+           <div role="main" class="ui-content">
+
+                <img  src="img/naruto.png" />
+
+           </div>
+           <!-- /content -->
+
+           <div data-role="footer" data-position="fixed">
+               <div data-role="navbar">
+                   <ul>
+                       <li>
+                           <a data-icon="arrow-d-l" href="#first-page">Page 1</a>
+                       </li>
+                       <li>
+                           <a data-icon="arrow-d" href="#second-page">Page 2</a>
+                       </li>
+                       <li>
+                           <a data-icon="arrow-d-l" href="#third-page">Page 3</a>
+                       </li>
+
+                   </ul>
+               </div>
+               <h4>SuperDuper App</h4>
+           </div>
+           <!-- /footer -->
+
+       </div>
+       <!-- /page -->
+
+       <script src="js/jquery.min.js"></script>
+       <script src="js/jquery.mobile-1.4.5.js"></script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
