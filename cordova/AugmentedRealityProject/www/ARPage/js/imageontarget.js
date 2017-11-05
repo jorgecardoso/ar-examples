@@ -27,9 +27,10 @@ var World = {
 
 
 		var samurai_eyes = new AR.ImageResource("assets/samurai-eyes.png");
-		var samurai_eyes_animate = new AR.AnimatedImageDrawable(samurai_eyes, 1, 286, 315, {
+		var samurai_eyes_animate = new AR.AnimatedImageDrawable(samurai_eyes, 0.53, 286, 315, {
 			offsetX: 0,
-			offsetY: 0
+			offsetY: 0.2,
+			zOrder: 10
 		});
 		samurai_eyes_animate.animate([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25], 50, -1);
  
@@ -42,18 +43,30 @@ var World = {
         	offsetX:.5,
 			offsetY:-.5
 		});
-
-        var htmlDrawableNaruto = new AR.HtmlDrawable({uri:"naruto.html"}, 0.53, {
+        var htmlDrawableNaruto = new AR.HtmlDrawable({uri:"naruto.html"}, 228/429, {
             offsetX : 0,
             offsetY : 0,
             viewportWidth : 228,
             viewportHeight : 429,
+
+            horizontalAnchor : AR.CONST.HORIZONTAL_ANCHOR.CENTER,
+            verticalAnchor : AR.CONST.VERTICAL_ANCHOR.CENTER,
+            opacity : 0.9,
+            zOrder: 5
+        });
+
+        var htmlDrawableClickMe = new AR.HtmlDrawable({uri:"clickme.html"}, 228/429, {
+            offsetX : 0,
+            offsetY : -0.5,
+            viewportWidth : 228,
+            viewportHeight : 200,
             onClick : function() {
                 document.location = 'architectsdk://action=showNaruto';
             },
             horizontalAnchor : AR.CONST.HORIZONTAL_ANCHOR.CENTER,
-            verticalAnchor : AR.CONST.VERTICAL_ANCHOR.CENTER,
-            opacity : 0.9
+            verticalAnchor : AR.CONST.VERTICAL_ANCHOR.BOTTOM,
+            opacity : 0.9,
+			zOrder: 5
         });
 
 		/*
@@ -62,7 +75,7 @@ var World = {
 		*/
 		var pageOne = new AR.Trackable2DObject(this.tracker, "*", {
 			drawables: {
-				cam: [htmlDrawableNaruto, samurai_eyes_animate]
+				cam: [htmlDrawableNaruto, htmlDrawableClickMe, samurai_eyes_animate]
 			},
             onEnterFieldOfVision: function() {
 				console.log("Entered");
