@@ -1,2 +1,5 @@
 cordova/AugmentedRealityProject/platforms/
 cordova/AugmentedRealityProject/plugins/
+.idea/
+cordova/AugmentedRealityPixLive/plugins/
+cordova/AugmentedRealityPixLive/node_modules/
